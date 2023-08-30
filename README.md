@@ -7,6 +7,37 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
+# DND-Stores
+
+## Prerequisites
+
+1. WSL 2
+- Download Ubuntu general distro from microsoft store
+- run `wsl --set-version ubuntu 2` in a powershell terminal to upgrade wsl version to 2
+
+2. Docker Destop
+- Download docker desktop from [here](https://www.docker.com/products/docker-desktop/).
+- Enable WSL integration via settings - this may be a good opportunity to restart your computer to avoid complications.
+
+Optional
+
+3. Windows Terminal
+- Download windows terminal from microsoft store.
+- In settings, select Ubuntu as default when terminal is launched
+
+## Getting Up and Running
+
+1. Git clone this repository
+2. From the root folder of the application we're going to use the official composer container to run composer install:
+```bash
+$ docker run --rm --interactive --tty \
+  --volume $PWD:/app \
+  composer install
+```
+3. Then we're going to start our docker containers and detach. `sail up -d`
+4. Next we need NPM dependencies - `sail npm install`
+
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
